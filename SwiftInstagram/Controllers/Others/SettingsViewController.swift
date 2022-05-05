@@ -103,7 +103,9 @@ final class SettingsViewController: UIViewController {
     private func editProfile() {
         let vc = EditProfileViewController()
         vc.title = "Edit Profile"
-        present(UINavigationController(rootViewController: vc), animated: true)
+        let navVc = UINavigationController(rootViewController: vc)
+        navVc.modalPresentationStyle = .fullScreen
+        present(navVc, animated: true)
     }
     func handleSignout() {
         let alert = UIAlertController(title: "Warning!!!", message: "Are you sure want to Sign out?", preferredStyle: .alert)

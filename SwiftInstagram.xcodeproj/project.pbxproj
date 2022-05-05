@@ -10,6 +10,10 @@
 		087DB5AD2817F0D00029A54E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087DB5AC2817F0D00029A54E /* DatabaseManager.swift */; };
 		087DB5AF2817F1690029A54E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087DB5AE2817F1690029A54E /* AuthManager.swift */; };
 		087DB5B12817F18D0029A54E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087DB5B02817F18D0029A54E /* StorageManager.swift */; };
+		088A1C312823AB2F005B652E /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A1C302823AB2F005B652E /* FormTableViewCell.swift */; };
+		088A1C352823D159005B652E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A1C342823D159005B652E /* PhotoCollectionViewCell.swift */; };
+		088A1C382823D1A9005B652E /* ProfileInfoHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A1C372823D1A9005B652E /* ProfileInfoHeaderCollectionReusableView.swift */; };
+		088A1C3A2823D1D2005B652E /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A1C392823D1D2005B652E /* ProfileTabsCollectionReusableView.swift */; };
 		08A10E34281BE7FA007271BE /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A10E33281BE7FA007271BE /* EditProfileViewController.swift */; };
 		08B954032818E6C2003D36E6 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B954022818E6C2003D36E6 /* ViewExtensions.swift */; };
 		08B9540528193FCF003D36E6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B9540428193FCF003D36E6 /* StringExtensions.swift */; };
@@ -69,6 +73,10 @@
 		087DB5AC2817F0D00029A54E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		087DB5AE2817F1690029A54E /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		087DB5B02817F18D0029A54E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		088A1C302823AB2F005B652E /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
+		088A1C342823D159005B652E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		088A1C372823D1A9005B652E /* ProfileInfoHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		088A1C392823D1D2005B652E /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
 		08A10E33281BE7FA007271BE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		08B954022818E6C2003D36E6 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		08B9540428193FCF003D36E6 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -143,6 +151,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		088A1C332823D124005B652E /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				088A1C342823D159005B652E /* PhotoCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		088A1C362823D186005B652E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				088A1C372823D1A9005B652E /* ProfileInfoHeaderCollectionReusableView.swift */,
+				088A1C392823D1D2005B652E /* ProfileTabsCollectionReusableView.swift */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		08B954012818E6A4003D36E6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				08D12AA6281BCC5400E1850D /* HomeFeed */,
+				088A1C302823AB2F005B652E /* FormTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -237,6 +263,8 @@
 		08F39F642817DDF800BE8DD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				088A1C362823D186005B652E /* Headers */,
+				088A1C332823D124005B652E /* CollectionViewCells */,
 				08D12AA3281BCAE300E1850D /* TableViewCells */,
 				08F39F692817DE2A00BE8DD4 /* Storyboards */,
 			);
@@ -600,15 +628,19 @@
 				08F39F6D2817DEB200BE8DD4 /* CameraViewController.swift in Sources */,
 				08F39F732817DED600BE8DD4 /* ActivityViewController.swift in Sources */,
 				08F39F812817DF7700BE8DD4 /* ListViewController.swift in Sources */,
+				088A1C352823D159005B652E /* PhotoCollectionViewCell.swift in Sources */,
 				087DB5AF2817F1690029A54E /* AuthManager.swift in Sources */,
 				08B9540528193FCF003D36E6 /* StringExtensions.swift in Sources */,
 				08F39F7F2817DF5800BE8DD4 /* SettingsViewController.swift in Sources */,
 				08F39F892817DFC100BE8DD4 /* PublishPostViewController.swift in Sources */,
 				08D12AA5281BCB2200E1850D /* FeedsPostTableViewCell.swift in Sources */,
 				08F39F6F2817DEC200BE8DD4 /* NotificationViewController.swift in Sources */,
+				088A1C382823D1A9005B652E /* ProfileInfoHeaderCollectionReusableView.swift in Sources */,
 				08D12AA8281BCC6A00E1850D /* PostHeaderTableViewCell.swift in Sources */,
 				08F39F382817DDB300BE8DD4 /* HomeViewController.swift in Sources */,
+				088A1C312823AB2F005B652E /* FormTableViewCell.swift in Sources */,
 				08F39F712817DECB00BE8DD4 /* ProfileViewController.swift in Sources */,
+				088A1C3A2823D1D2005B652E /* ProfileTabsCollectionReusableView.swift in Sources */,
 				08A10E34281BE7FA007271BE /* EditProfileViewController.swift in Sources */,
 				087DB5AD2817F0D00029A54E /* DatabaseManager.swift in Sources */,
 				08D12AAC281BCC9F00E1850D /* FeedsLikesTableViewCell.swift in Sources */,
