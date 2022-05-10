@@ -98,7 +98,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         if indexPath.section == 1 {
             let tabHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier, for: indexPath) as! ProfileTabsCollectionReusableView
-            
+            tabHeader.delegate = self
             return tabHeader
         }
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier, for: indexPath) as! ProfileInfoHeaderCollectionReusableView
@@ -122,15 +122,38 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     }
     
     func profileHeaderFollowersButtonClicked(_ header: ProfileInfoHeaderCollectionReusableView) {
-        
+        let vc = ListViewController(data: ["xxx","yyy","zzz"])
+        vc.title = "Followers"
+        vc.hidesBottomBarWhenPushed = true
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileHeaderFollowingButtonClicked(_ header: ProfileInfoHeaderCollectionReusableView) {
-        
+        let vc = ListViewController(data: ["xxx","yyy","zzz"])
+        vc.title = "Following"
+        vc.hidesBottomBarWhenPushed = true
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileHeaderEditProfileButtonClicked(_ header: ProfileInfoHeaderCollectionReusableView) {
+        let vc = UINavigationController(rootViewController: EditProfileViewController())
         
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
    
+}
+
+extension ProfileViewController: ProfileTabsCollectionReusableViewDeleagte {
+    func didTapGridbutton() {
+        //
+    }
+    
+    func didTapTaggedButton() {
+        //
+    }
+    
+    
 }

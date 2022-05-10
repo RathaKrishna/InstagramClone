@@ -126,12 +126,12 @@ final class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
         editProfileButton.snp.makeConstraints { make in
             make.left.right.equalTo(buttonView)
             make.top.equalTo(buttonView.snp.bottom).offset(5)
-            make.height.equalTo(40)
+            make.height.equalTo(38)
         }
         
         nameLbl.snp.makeConstraints { make in
             make.left.equalTo(avatarImageView)
-            make.top.equalTo(avatarImageView.snp.bottom).offset(10)
+            make.top.equalTo(avatarImageView.snp.bottom).offset(15)
         }
         bioLbl.snp.makeConstraints { make in
             make.left.equalTo(avatarImageView)
