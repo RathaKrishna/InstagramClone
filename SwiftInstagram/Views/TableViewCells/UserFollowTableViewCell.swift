@@ -23,6 +23,7 @@ struct UserFollowViewModel {
 class UserFollowTableViewCell: UITableViewCell {
     static let identifier = "UserFollowTableViewCell"
     weak var delegate: UserFollowTableViewCellDelegate?
+    private var model: UserFollowViewModel?
     
     private let profileImgView: UIImageView = {
         let imgV = UIImageView()
@@ -56,7 +57,7 @@ class UserFollowTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        selectionStyle = .none
         contentView.clipsToBounds = true
         addSubview(profileImgView)
         addSubview(nameLable)
@@ -112,7 +113,15 @@ class UserFollowTableViewCell: UITableViewCell {
         followButton.backgroundColor = nil
     }
 
+    @objc private func didFollowButtonClicked() {
+        guard let model = model else {
+            return
+        }
+
+        delegate?.didFollowUnFollowClicked(model: model)
+    }
     public func configure(with model: UserFollowViewModel) {
+        self.model = model
         nameLable.text = model.name
         usernameLable.text = model.username
         switch model.type {

@@ -23,6 +23,9 @@
 		08D12AA8281BCC6A00E1850D /* PostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D12AA7281BCC6A00E1850D /* PostHeaderTableViewCell.swift */; };
 		08D12AAA281BCC8400E1850D /* FeedActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D12AA9281BCC8400E1850D /* FeedActionsTableViewCell.swift */; };
 		08D12AAC281BCC9F00E1850D /* FeedsLikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D12AAB281BCC9F00E1850D /* FeedsLikesTableViewCell.swift */; };
+		08E2456E2829FB11005E5119 /* NoActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2456D2829FB11005E5119 /* NoActivitiesView.swift */; };
+		08E245712829FDDF005E5119 /* ActivityFollowEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E245702829FDDF005E5119 /* ActivityFollowEventTableViewCell.swift */; };
+		08E245732829FDEB005E5119 /* ActivityLikeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E245722829FDEB005E5119 /* ActivityLikeEventTableViewCell.swift */; };
 		08F39F342817DDB300BE8DD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F39F332817DDB300BE8DD4 /* AppDelegate.swift */; };
 		08F39F362817DDB300BE8DD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F39F352817DDB300BE8DD4 /* SceneDelegate.swift */; };
 		08F39F382817DDB300BE8DD4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F39F372817DDB300BE8DD4 /* HomeViewController.swift */; };
@@ -88,6 +91,9 @@
 		08D12AA7281BCC6A00E1850D /* PostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		08D12AA9281BCC8400E1850D /* FeedActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedActionsTableViewCell.swift; sourceTree = "<group>"; };
 		08D12AAB281BCC9F00E1850D /* FeedsLikesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsLikesTableViewCell.swift; sourceTree = "<group>"; };
+		08E2456D2829FB11005E5119 /* NoActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoActivitiesView.swift; sourceTree = "<group>"; };
+		08E245702829FDDF005E5119 /* ActivityFollowEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFollowEventTableViewCell.swift; sourceTree = "<group>"; };
+		08E245722829FDEB005E5119 /* ActivityLikeEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLikeEventTableViewCell.swift; sourceTree = "<group>"; };
 		08F39F302817DDB300BE8DD4 /* SwiftInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F39F332817DDB300BE8DD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08F39F352817DDB300BE8DD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 		08D12AA3281BCAE300E1850D /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				08E2456F2829FDB6005E5119 /* Activities */,
 				08D12AA6281BCC5400E1850D /* HomeFeed */,
 				088A1C302823AB2F005B652E /* FormTableViewCell.swift */,
 				08F75FA9282905FB00A05A54 /* UserFollowTableViewCell.swift */,
@@ -200,6 +207,15 @@
 				08D12AAB281BCC9F00E1850D /* FeedsLikesTableViewCell.swift */,
 			);
 			path = HomeFeed;
+			sourceTree = "<group>";
+		};
+		08E2456F2829FDB6005E5119 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				08E245702829FDDF005E5119 /* ActivityFollowEventTableViewCell.swift */,
+				08E245722829FDEB005E5119 /* ActivityLikeEventTableViewCell.swift */,
+			);
+			path = Activities;
 			sourceTree = "<group>";
 		};
 		08F39F272817DDB300BE8DD4 = {
@@ -272,6 +288,7 @@
 				088A1C332823D124005B652E /* CollectionViewCells */,
 				08D12AA3281BCAE300E1850D /* TableViewCells */,
 				08F39F692817DE2A00BE8DD4 /* Storyboards */,
+				08E2456D2829FB11005E5119 /* NoActivitiesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -633,6 +650,7 @@
 				08F39F872817DFB600BE8DD4 /* PostEditorViewController.swift in Sources */,
 				08F39F6B2817DE9F00BE8DD4 /* ExploreViewController.swift in Sources */,
 				08F39F6D2817DEB200BE8DD4 /* CameraViewController.swift in Sources */,
+				08E245712829FDDF005E5119 /* ActivityFollowEventTableViewCell.swift in Sources */,
 				08F39F732817DED600BE8DD4 /* ActivityViewController.swift in Sources */,
 				08F39F812817DF7700BE8DD4 /* ListViewController.swift in Sources */,
 				088A1C352823D159005B652E /* PhotoCollectionViewCell.swift in Sources */,
@@ -646,7 +664,9 @@
 				08D12AA8281BCC6A00E1850D /* PostHeaderTableViewCell.swift in Sources */,
 				08F39F382817DDB300BE8DD4 /* HomeViewController.swift in Sources */,
 				088A1C312823AB2F005B652E /* FormTableViewCell.swift in Sources */,
+				08E245732829FDEB005E5119 /* ActivityLikeEventTableViewCell.swift in Sources */,
 				08F39F712817DECB00BE8DD4 /* ProfileViewController.swift in Sources */,
+				08E2456E2829FB11005E5119 /* NoActivitiesView.swift in Sources */,
 				088A1C3A2823D1D2005B652E /* ProfileTabsCollectionReusableView.swift in Sources */,
 				08A10E34281BE7FA007271BE /* EditProfileViewController.swift in Sources */,
 				087DB5AD2817F0D00029A54E /* DatabaseManager.swift in Sources */,

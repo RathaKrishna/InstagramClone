@@ -15,6 +15,8 @@ target 'SwiftInstagram' do
   pod 'Firebase/Database'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Storage'
+#  pod 'Firebase/Firestore'
+
   
   target 'SwiftInstagramTests' do
     inherit! :search_paths

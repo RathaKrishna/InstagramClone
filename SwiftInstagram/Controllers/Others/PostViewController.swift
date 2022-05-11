@@ -37,7 +37,7 @@ class PostViewController: UIViewController {
         tableView.frame = view.bounds
     }
 }
-
+// MARK: - TableView Delegate
 extension PostViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 0

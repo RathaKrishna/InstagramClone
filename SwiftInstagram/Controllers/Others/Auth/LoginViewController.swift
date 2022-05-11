@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     struct Constants {
         static let cornerRadius: CGFloat = 8.0
     }
+    // init views
     private let userNameField: UITextField = {
         let field = UITextField()
         field.placeholder = "Enter Username or Email.."
@@ -279,7 +280,7 @@ class LoginViewController: UIViewController {
         present(vc, animated: true)
     }
 }
-
+// MARK: - TextField Delegate
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

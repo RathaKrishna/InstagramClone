@@ -130,7 +130,7 @@ final class SettingsViewController: UIViewController {
         
     }
 }
-
+// MARK: - TableView Delegate
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {

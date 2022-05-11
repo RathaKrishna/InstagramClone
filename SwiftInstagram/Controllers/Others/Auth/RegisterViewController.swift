@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
     struct Constants {
         static let cornerRadius: CGFloat = 8.0
     }
-    
+    /// Initi views
     private let headerImg: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "Instagram")
@@ -183,6 +183,7 @@ class RegisterViewController: UIViewController {
         privacyButton.addTarget(self, action: #selector(didPrivacyButtonClicked), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(didRegisterButtonClicked), for: .touchUpInside)
     }
+    /// layout subviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -268,6 +269,7 @@ class RegisterViewController: UIViewController {
             
         }
     }
+    
     @objc func didLoginButtonClicked() {
         dismiss(animated: true)
     }
@@ -290,7 +292,7 @@ class RegisterViewController: UIViewController {
     }
 }
 
-
+// MARK: - TextField Delegate
 extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

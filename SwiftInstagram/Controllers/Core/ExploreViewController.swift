@@ -39,7 +39,7 @@ class ExploreViewController: UIViewController {
     
 
 }
-
+// MARK: - CollectionView Delegate
 extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0

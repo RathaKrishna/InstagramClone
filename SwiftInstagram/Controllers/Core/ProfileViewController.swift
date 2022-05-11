@@ -122,7 +122,11 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     }
     
     func profileHeaderFollowersButtonClicked(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc = ListViewController(data: ["xxx","yyy","zzz"])
+        var mockData = [UserFollowViewModel]()
+        for x in 0..<10 {
+            mockData.append(UserFollowViewModel(username: "@joe_\(x)", name: "DazzelBen\(x)", type: x % 2 == 0 ? .following : .not_following))
+        }
+        let vc = ListViewController(data: mockData)
         vc.title = "Followers"
         vc.hidesBottomBarWhenPushed = true
         vc.navigationItem.largeTitleDisplayMode = .never
@@ -130,7 +134,12 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     }
     
     func profileHeaderFollowingButtonClicked(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc = ListViewController(data: ["xxx","yyy","zzz"])
+        var mockData = [UserFollowViewModel]()
+        for x in 0..<10 {
+            mockData.append(UserFollowViewModel(username: "@joe_\(x)", name: "DazzelBen\(x)", type: x % 2 == 0 ? .following : .not_following))
+        }
+        
+        let vc = ListViewController(data: mockData)
         vc.title = "Following"
         vc.hidesBottomBarWhenPushed = true
         vc.navigationItem.largeTitleDisplayMode = .never
@@ -146,6 +155,7 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
    
 }
 
+// MARK: - ReusableView Delegate
 extension ProfileViewController: ProfileTabsCollectionReusableViewDeleagte {
     func didTapGridbutton() {
         //

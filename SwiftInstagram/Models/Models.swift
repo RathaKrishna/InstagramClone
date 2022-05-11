@@ -23,6 +23,7 @@ struct User{
     let gender: Gender
     let counts: UserCount
     let joinDate: Date
+    let profilePic: URL
 }
 
 struct UserCount {
@@ -59,4 +60,14 @@ struct PostComment {
     let comment: String
     let createdDate: Date
     let likes: [CommentLike]
+}
+enum UserActivityType {
+    case like(post: UserPostModel)
+    case follow
+}
+struct UserActivity {
+    let type: UserActivityType
+    let text: String
+    let user: User
+    
 }

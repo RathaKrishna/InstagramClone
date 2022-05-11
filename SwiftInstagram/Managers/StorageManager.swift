@@ -17,10 +17,23 @@ public class StorageManager {
     
     public enum StorageManagerError: Error {
         case failedToDownload
+        case failedToUPload
     }
     // MARK: - Public
     
+    public func uploadImage(imageData: Data, completion: @escaping (Result<Bool, Error>) -> Void) {
+        bucket.child("images/avatar.png").putData(imageData, metadata: nil) { metaData, error in
+            guard error == nil else {
+                print("Failed to upload")
+                completion(.failure(StorageManagerError.failedToUPload))
+                return
+            }
+            completion(.success(true))
+        }
+    }
+    
     public func uploadFeeds(model: UserPostModel, completion: @escaping (Result<URL, Error>) -> Void) {
+        
         
     }
     

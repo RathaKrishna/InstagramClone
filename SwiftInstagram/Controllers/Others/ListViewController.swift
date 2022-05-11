@@ -9,15 +9,14 @@ import UIKit
 
 class ListViewController: UIViewController {
 
-    private let data: [String]
-    
+    private let data: [UserFollowViewModel]
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(UserFollowTableViewCell.self, forCellReuseIdentifier: UserFollowTableViewCell.identifier)
         return table
     }()
     
-    init(data: [String]) {
+    init(data: [UserFollowViewModel]) {
         self.data = data
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,7 +38,7 @@ class ListViewController: UIViewController {
     }
 
 }
-
+// MARK: - Tableview Delegate
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -49,7 +48,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserFollowTableViewCell.identifier , for: indexPath) as! UserFollowTableViewCell
-        
+        cell.delegate = self
+        cell.configure(with: data[indexPath.row])
 //        cell.textLabel?.text = data[indexPath.row]
         return cell
     }
@@ -61,4 +61,19 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+// MARK: - TableviewCell Delegate
+extension ListViewController: UserFollowTableViewCellDelegate {
+    func didFollowUnFollowClicked(model: UserFollowViewModel) {
+        switch model.type {
+        case .following:
+            // Perform firebase update unfollow
+            break
+        case .not_following:
+            // Perform follow on firebase
+            break
+        }
+    }
+    
+    
 }

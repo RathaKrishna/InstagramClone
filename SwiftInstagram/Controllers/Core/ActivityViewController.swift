@@ -12,23 +12,48 @@ class ActivityViewController: UIViewController {
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        table.register(ActivityLikeEventTableViewCell.self, forCellReuseIdentifier: ActivityLikeEventTableViewCell.identifier)
+        table.register(ActivityFollowEventTableViewCell.self, forCellReuseIdentifier: ActivityFollowEventTableViewCell.identifier)
+        table.isHidden = true
         return table
     }()
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView()
+        spinner.style = .large
+        spinner.hidesWhenStopped = true
+        spinner.tintColor = .label
+        return spinner
+    }()
+    private lazy var noActivityView = NoActivitiesView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Activity"
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
+        view.addSubview(spinner)
+//        spinner.startAnimating()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        spinner.snp.makeConstraints { make in
+            make.width.height.equalTo(100)
+            make.center.equalToSuperview()
+        }
+    }
+    private func layoutNoActivitiyView() {
+        tableView.isHidden = true
+        view.addSubview(noActivityView)
+        noActivityView.frame = view.bounds
     }
 
 }
+
+// MARK: - Tableview 
 
 extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -40,5 +65,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
